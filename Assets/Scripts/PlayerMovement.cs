@@ -27,4 +27,9 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
     }
+
+    public void Death()
+    {
+        Destroy(gameObject, 1f);
+    }
 }
