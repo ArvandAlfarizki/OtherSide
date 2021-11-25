@@ -7,7 +7,7 @@ public class Key : MonoBehaviour
 {
     [SerializeField]
     private Text pickUpText;
-
+    public GameObject invBox;
     private bool pickUpAllowed;
     // Start is called before the first frame update
     private void Start()
@@ -43,5 +43,6 @@ public class Key : MonoBehaviour
     private void PickUp()
     {
         Destroy(gameObject);
+        invBox.gameObject.SetActive(false);
     }
 }

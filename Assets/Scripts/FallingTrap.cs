@@ -28,7 +28,6 @@ public class FallingTrap : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
             collision.gameObject.GetComponent<PlayerMovement>().Death();
         }
     }
