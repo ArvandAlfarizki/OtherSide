@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public Text Notif;
 
+    public void Start()
+    {
+        Notif.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +33,7 @@ public class Interactable : MonoBehaviour
         {
             isInRange = true;
             Debug.Log("Player now in reange");
+            Notif.gameObject.SetActive(true);
         }
     }
 
@@ -36,6 +43,7 @@ public class Interactable : MonoBehaviour
         {
             isInRange = false;
             Debug.Log("Player now not in range");
+            Notif.gameObject.SetActive(false);
         }
     }
 }

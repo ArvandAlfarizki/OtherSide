@@ -5,44 +5,15 @@ using UnityEngine.UI;
 
 public class Key : MonoBehaviour
 {
-    [SerializeField]
-    private Text pickUpText;
-    public GameObject invBox;
-    private bool pickUpAllowed;
-    // Start is called before the first frame update
-    private void Start()
-    {
-        pickUpText.gameObject.SetActive(false);
-    }
+    public bool PickUp;
 
-    // Update is called once per frame
-    private void Update()
+    public void Pick()
     {
-       if (pickUpAllowed && Input.GetKeyDown(KeyCode.W))
-       PickUp();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("Player"))
+        if(!PickUp)
         {
-            pickUpText.gameObject.SetActive(true);
-            pickUpAllowed = true;
+            PickUp = true;
+            Debug.Log("Key Picked");
+            Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("Player"))
-        {
-            pickUpText.gameObject.SetActive(false);
-            pickUpAllowed = false;
-        }
-    }
-
-    private void PickUp()
-    {
-        Destroy(gameObject);
-        invBox.gameObject.SetActive(false);
     }
 }
