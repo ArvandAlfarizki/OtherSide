@@ -7,21 +7,32 @@ public class NpcController : MonoBehaviour
 {
     public bool isAccept;
     [SerializeField]
-    private Text pickupText;
+    private GameObject Key;
+    [SerializeField]
+    private GameObject doorOut;
     //public Animator animator;
     // Start is called before the first frame update
     private void Start()
     {
-        pickupText.gameObject.SetActive(false);
+        Key.gameObject.SetActive(false);
+        doorOut.gameObject.SetActive(false);
     }
-    public void Accept()
+    
+    public void Accepted(GameObject obj)
     {
         if(!isAccept)
         {
-            isAccept = true;
-            Debug.Log("Accepted");
-            //animator.SetBool("Accept", isAccept);
-            pickupText.gameObject.SetActive(true);
+            PlayerManager manager = obj.GetComponent<PlayerManager>();
+            if(manager)
+            {
+                if(manager.keyCount > 0)
+                {
+                    isAccept = true;
+                    manager.UseKey();
+                    Key.gameObject.SetActive(true);
+                    doorOut.gameObject.SetActive(true);
+                }
+            }
         }
     }
 }
