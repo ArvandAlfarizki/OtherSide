@@ -1,0 +1,47 @@
+title: Start
+tags: 
+colorID: 0
+position: 589,-12
+---
+Hantu: Tolong ambilkan buku itu
+[[Siapa disana?|Jawaban1]]
+===
+title: Jawaban3
+tags: 
+colorID: 0
+position: 150,604
+---
+Hantu: Dia adalah sang penjaga "OTHER SIDE"!!!!!!
+[[OTHER SIDE????!!!!!!!!|Jawabanterakhir]]
+===
+title: Jawaban4
+tags: 
+colorID: 0
+position: 933,575
+---
+Hantu:......
+===
+title: Jawabanterakhir
+tags: 
+colorID: 0
+position: 478,740
+---
+Hantu:.........
+===
+title: Jawabankedua
+tags: 
+colorID: 0
+position: 529,399
+---
+Hantu:Cepat!!!!!!!!!!, dia sudah mendekat........ dia sedang mengejarmu...!!!!!!!
+[[Siapa yang mengejarku? kau tahu apa tentangku?|Jawaban3]]
+[[Aku tidak mengerti maksudmu tapi baiklah aku akan mengambilkannya untukmu|Jawaban4]]
+===
+title: Jawaban1
+tags: 
+colorID: 0
+position: 266,195
+---
+Hantu: Ambilkan buku itu maka kamu akan kuberika kunci untuk keluar dari ruangan ini
+[[Buku???|Jawabankedua]]
+===

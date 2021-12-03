@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 9bdd0865bcddc3b43b04693ec6fbdd6e
+ScriptedImporter:
+  fileIDToRecycleName:
+    4900000: Strings
+    11400000: Program
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - NPC-Start-0
+  - NPC-Start-1
+  - NPC-Jawaban3-2
+  - NPC-Jawaban3-3
+  - NPC-Jawaban4-4
+  - NPC-Jawabanterakhir-5
+  - NPC-Jawabankedua-6
+  - NPC-Jawabankedua-7
+  - NPC-Jawabankedua-8
+  - NPC-Jawaban1-9
+  - NPC-Jawaban1-10
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
