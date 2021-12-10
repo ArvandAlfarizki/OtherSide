@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public GameObject gameOverText, restartButton;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
     private Rigidbody2D rigidBody;
     // Start is called before the first frame update
     private void Start()
     {
+        gameOverText.SetActive (false);
+        restartButton.SetActive (false);
+
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -28,8 +33,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Death()
+    void OnCollisionEnter2D (Collision2D col)
     {
-        Destroy(gameObject, 1f);
+        if (col.gameObject.tag.Equals ("Enemy"))
+        {
+        gameOverText.SetActive (true);
+        restartButton.SetActive (true);
+        gameObject.SetActive (false);
+        }
     }
 }
