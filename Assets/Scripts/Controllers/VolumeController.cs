@@ -1,38 +1,41 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour
 {
-    public static VolumeController Instance { get; set; }
-
-    private AudioSource audioSrc;
-
-    private float musicVolume = 1f;
-
-    private void Awake()
+    [SerializeField] Slider volumeSlider;
+    
+    void Start()
     {
-        audioSrc = GetComponent<AudioSource>();
-        DontDestroyOnLoad(this);
-
-        if (Instance == null)
+        if(!PlayerPrefs.HasKey("musicVolume"))
         {
-            Instance = this;
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            Load();
         }
         else
         {
-            Destroy(gameObject);
+            Load();
         }
+
+        
     }
 
-    void Update()
+    public void ChangeVolume()
     {
-        audioSrc.volume = musicVolume;
+        AudioListener.volume = volumeSlider.value;
+        Save();
     }
-
-    public void SetVolume(float vol)
-    {
-        musicVolume = vol;
-    }
-
     
+    private void Load()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+    }
+
 }

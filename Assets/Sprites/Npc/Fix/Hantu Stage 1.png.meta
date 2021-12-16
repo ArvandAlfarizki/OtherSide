@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Sprites/Npc/Fix/Hantu Stage 1.png.meta
 guid: 041b6560a0e98bf429d01352d50581dc
+=======
+guid: 57ba28a98181c3e47a240ec079b73bd2
+>>>>>>> Stashed changes:Assets/Sprites/Background/ForeGround/Foreground Tempat Parkiran.png.meta
+=======
+guid: 041b6560a0e98bf429d01352d50581dc
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

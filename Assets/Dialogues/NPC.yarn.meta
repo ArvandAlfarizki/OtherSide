@@ -1,15 +1,20 @@
 fileFormatVersion: 2
 guid: 9bdd0865bcddc3b43b04693ec6fbdd6e
 ScriptedImporter:
-  fileIDToRecycleName:
-    4900000: Strings
-    11400000: Program
+  internalIDToNameTable:
+  - first:
+      49: 4900000
+    second: Strings
+  - first:
+      114: 11400000
+    second: Program
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-US
   stringIDs:
   - NPC-Start-0
   - NPC-Start-1
@@ -25,5 +30,5 @@ ScriptedImporter:
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 4900000, guid: 9bdd0865bcddc3b43b04693ec6fbdd6e, type: 3}
   localizations: []
