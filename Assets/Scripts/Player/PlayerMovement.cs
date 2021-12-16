@@ -5,11 +5,7 @@ using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
-<<<<<<< Updated upstream
-
-=======
     
->>>>>>> Stashed changes
     public GameObject gameOverText, restartButton;
     public float MovementSpeed = 1;
     public float JumpForce = 1;

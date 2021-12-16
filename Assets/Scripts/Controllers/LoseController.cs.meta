@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: d18fa1d189c5b3e40bbd886a8ebcef52
-=======
-<<<<<<< Updated upstream:Assets/Scripts/Controllers/WinController.cs.meta
-guid: 6106fbc488ca3c341bfd664ea6eafcfc
-=======
-guid: d18fa1d189c5b3e40bbd886a8ebcef52
->>>>>>> Stashed changes:Assets/Scripts/Controllers/LoseController.cs.meta
->>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
