@@ -2465,8 +2465,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 23.384058
-<<<<<<< Updated upstream
-=======
       objectReference: {fileID: 0}
     - target: {fileID: 2453507705182975254, guid: cf9547f03b7146245aa738176232ef7f,
         type: 3}
@@ -2477,18 +2475,7 @@ PrefabInstance:
         type: 3}
       propertyPath: restartButton
       value: 
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
-    - target: {fileID: 2453507705182975254, guid: cf9547f03b7146245aa738176232ef7f,
-        type: 3}
-      propertyPath: gameOverText
-      value: 
-      objectReference: {fileID: 1982282767}
-    - target: {fileID: 2453507705182975254, guid: cf9547f03b7146245aa738176232ef7f,
-        type: 3}
-      propertyPath: restartButton
-      value: 
-      objectReference: {fileID: 634114259}
     - target: {fileID: 2453507705182975259, guid: cf9547f03b7146245aa738176232ef7f,
         type: 3}
       propertyPath: m_LocalPosition.x

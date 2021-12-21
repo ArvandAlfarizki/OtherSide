@@ -1,32 +1,83 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
+using DragonBones;
 
 public class Movement : MonoBehaviour
 {
-    public float walkspeed;
-    public Rigidbody2D rb;
+    float dirX;
+    [SerializeField]
+    float moveSpeed = 5f;
+    Rigidbody2D rb;
     public float JumpForce = 1;
+    AudioSource audioSrc;
+    bool isMoving = false;
+    bool isJump = false;
+    private UnityArmatureComponent player;
+
+    private DialogueRunner dialogueRunner = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        audioSrc = GetComponent<AudioSource> ();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+        player = GetComponent<UnityArmatureComponent>();
+        player.animation.Play(("idle"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        float direction = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(walkspeed * direction * Time.fixedDeltaTime, rb.velocity.y);
+        if(dialogueRunner.IsDialogueRunning == true)
+            return;
+
+        dirX = Input.GetAxis ("Horizontal") * moveSpeed;
+
+        var movement = Input.GetAxis("Horizontal");
+        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * moveSpeed;
     
-        if (direction != 0f)
-        {
-            transform.localScale = new Vector2 (Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y);
+        if (rb.velocity.x != 0){
+        isMoving = true;
+        }
+        else{
+        isMoving = false;
         }
 
+        if (isMoving) {
+            if (!audioSrc.isPlaying)
+            audioSrc.Play ();
+            player.animation.Play(("run"));
+        }
+        else if (isMoving)
+        {     
+            if (!audioSrc.isPlaying)  
+            audioSrc.Stop ();
+            player.animation.Stop(("run"));   
+        }
+
+        if (!Mathf.Approximately(0, movement))
+       //AudioPlayer.Instance.PlaySFX ("6. footstep_single_boys_sneaker_wood_001_50917");
+        transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        
+        
+        
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            player.animation.Play(("jump"));
+        }   
+        else
+        {
+            player.animation.Stop(("jump"));
         }
+        
     }
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2 (dirX, rb.velocity.y);
+    }
+
+    
 }
