@@ -37,6 +37,14 @@ public class Movement : MonoBehaviour
 
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * moveSpeed;
+
+        //if (isMoving)
+        //{
+            //player.animation.FadeIn(("run"), 0.25f, 1);
+        //}
+        //else{
+            //player.animation.Play(("idle"));
+        //}
     
         if (rb.velocity.x != 0){
         isMoving = true;
@@ -48,13 +56,14 @@ public class Movement : MonoBehaviour
         if (isMoving) {
             if (!audioSrc.isPlaying)
             audioSrc.Play ();
-            player.animation.Play(("run"));
+            player.animation.FadeIn(("run"), 0.10f, 1);
         }
         else if (isMoving)
         {     
             if (!audioSrc.isPlaying)  
             audioSrc.Stop ();
-            player.animation.Stop(("run"));   
+             player.animation.Stop(("run"));
+            player.animation.Play(("idle"));   
         }
 
         if (!Mathf.Approximately(0, movement))
@@ -66,11 +75,11 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-            player.animation.Play(("jump"));
+            player.animation.FadeIn(("jump"), 0.25f, 1);
         }   
-        else
+        else if (Input.GetButtonUp("Jump")  && Mathf.Abs(rb.velocity.y) > 0.001f)
         {
-            player.animation.Stop(("jump"));
+            player.animation.Play(("idle"));
         }
         
     }

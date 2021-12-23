@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage2.unity
     guid: 2a5532073e054984882a83836183e715
+  - enabled: 1
+    path: Assets/Scenes/Lorong3.unity
+    guid: 4f326db1f901af14dbd82eef572aa214
   m_configObjects: {}
