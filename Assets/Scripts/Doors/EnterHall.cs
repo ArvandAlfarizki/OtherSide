@@ -19,12 +19,16 @@ public class EnterHall : MonoBehaviour
         {
             sceneToLoad = "Lorong2";
             enterAllowed = true;
+        }else if (collision.GetComponent<Door4>())
+        {
+            sceneToLoad = "Lorong3";
+            enterAllowed = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Door0>() || collision.GetComponent<Door2>())
+        if (collision.GetComponent<Door0>() || collision.GetComponent<Door2>() || collision.GetComponent<Door4>())
         {
             enterAllowed = false;
         }
