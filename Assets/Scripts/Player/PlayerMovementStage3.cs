@@ -6,6 +6,8 @@ public class PlayerMovementStage3 : MonoBehaviour
 {
     public GameObject gameOverText, restartButton;
     public GameObject TriggerEnemy;
+    public GameObject Light;
+    public GameObject Lighting;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
     private Rigidbody2D rigidBody;
@@ -18,7 +20,9 @@ public class PlayerMovementStage3 : MonoBehaviour
     {
         gameOverText.SetActive (false);
         restartButton.SetActive (false);
+        Light.SetActive (true);
         TriggerEnemy.gameObject.SetActive (false);
+        Lighting.gameObject.SetActive (false);
 
         rigidBody = GetComponent<Rigidbody2D>();
         audioSrc = GetComponent<AudioSource> ();
@@ -53,6 +57,8 @@ public class PlayerMovementStage3 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         TriggerEnemy.gameObject.SetActive(true);
+        Lighting.gameObject.SetActive(true);
+        Light.gameObject.SetActive(false);
     }
 
     void OnCollisionEnter2D (Collision2D col)
