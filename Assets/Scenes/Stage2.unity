@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 7.35
       objectReference: {fileID: 0}
+    - target: {fileID: 19986726, guid: 5d7d20cd12171e64dbf63552d530e567, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7d20cd12171e64dbf63552d530e567, type: 3}
 --- !u!1 &192988602
