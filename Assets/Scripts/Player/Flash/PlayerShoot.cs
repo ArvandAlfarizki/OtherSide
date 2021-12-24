@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     {
         int direction()
         {
-            if(transform.localScale.x < 0f)
+            if(transform.localScale.x > 0f)
             {
                 return -1;
             }

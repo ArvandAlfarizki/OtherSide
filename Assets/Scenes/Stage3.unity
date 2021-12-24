@@ -1029,8 +1029,8 @@ GameObject:
   - component: {fileID: 905918675}
   - component: {fileID: 905918674}
   - component: {fileID: 905918678}
-  - component: {fileID: 905918677}
   - component: {fileID: 905918676}
+  - component: {fileID: 905918677}
   m_Layer: 0
   m_Name: Hantu Stage 3
   m_TagString: Enemy
@@ -1096,7 +1096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905918673}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -71.2, y: -2.46, z: 0}
+  m_LocalPosition: {x: -65, y: -2.46, z: 0}
   m_LocalScale: {x: 0.34218997, y: 0.27699086, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1129,9 +1129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78aef85a8ff680a4ea37c174fc5882ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 6
-  dieEffect: {fileID: 7344940358387095685, guid: f3e6cfe95563a614187c4135b35eea7b,
-    type: 3}
+  startHealth: 20
+  dieEffect: {fileID: 184024, guid: 7ac915491188b0a42b4dde17fbba04a9, type: 3}
 --- !u!61 &905918678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2940,7 +2939,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2453507705561868929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c48d76064a8c84abe37db13f8ccd73, type: 3}
+  m_Script: {fileID: 11500000, guid: 79ddfc11dc04dbc46b52b5a90c94d7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 900
