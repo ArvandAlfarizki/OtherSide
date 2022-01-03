@@ -12,15 +12,18 @@ public class EnterHall : MonoBehaviour
     {
         if (collision.GetComponent<Door0>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Lorong";
             enterAllowed = true;
         }
         else if (collision.GetComponent<Door2>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Lorong2";
             enterAllowed = true;
         }else if (collision.GetComponent<Door4>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Lorong3";
             enterAllowed = true;
         }

@@ -12,16 +12,19 @@ public class EnterDoor : MonoBehaviour
     {
         if (collision.GetComponent<Door1>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Stage1";
             enterAllowed = true;
         }
         else if (collision.GetComponent<Door3>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Stage2";
             enterAllowed = true;
         }
         else if (collision.GetComponent<Door5>())
         {
+            AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Stage3";
             enterAllowed = true;
         }
