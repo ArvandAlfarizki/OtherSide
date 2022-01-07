@@ -463,13 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 1314280178}
   restartButton: {fileID: 524652578}
-<<<<<<< Updated upstream
-  MovementSpeed: 5
-  JumpForce: 7
-=======
   moveSpeed: 2
   JumpForce: 5
->>>>>>> Stashed changes
 --- !u!114 &453923363 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5346928109664947148, guid: cf9547f03b7146245aa738176232ef7f,
@@ -623,11 +618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 12
-=======
   m_RootOrder: 17
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524652578
 GameObject:
@@ -3470,9 +3461,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 11
-=======
   m_RootOrder: 16
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
