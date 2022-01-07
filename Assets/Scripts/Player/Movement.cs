@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-<<<<<<< Updated upstream
-using DragonBones;
-=======
->>>>>>> Stashed changes
 
 public class Movement : MonoBehaviour
 {
@@ -15,15 +11,9 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb;
     public float JumpForce = 1;
     AudioSource audioSrc;
-<<<<<<< Updated upstream
-    bool isMoving = false;
-    bool isJump = false;
-    private UnityArmatureComponent player;
-=======
     private Animator anim;
     bool isMoving = false;
     bool isJump = false;
->>>>>>> Stashed changes
 
     private DialogueRunner dialogueRunner = null;
     // Start is called before the first frame update
@@ -31,14 +21,8 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         audioSrc = GetComponent<AudioSource> ();
-<<<<<<< Updated upstream
-        dialogueRunner = FindObjectOfType<DialogueRunner>();
-        player = GetComponent<UnityArmatureComponent>();
-        player.animation.Play(("idle"));
-=======
         anim = GetComponent<Animator>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -70,22 +54,13 @@ public class Movement : MonoBehaviour
         if (isMoving) {
             if (!audioSrc.isPlaying)
             audioSrc.Play ();
-<<<<<<< Updated upstream
-            player.animation.FadeIn(("run"), 0.10f, 1);
-=======
             anim.SetBool("isRunning", true);
->>>>>>> Stashed changes
         }
         else if (isMoving)
         {     
             if (!audioSrc.isPlaying)  
             audioSrc.Stop ();
-<<<<<<< Updated upstream
-             player.animation.Stop(("run"));
-            player.animation.Play(("idle"));   
-=======
             anim.SetBool("isRunning", false);
->>>>>>> Stashed changes
         }
 
         if (!Mathf.Approximately(0, movement))
@@ -97,19 +72,11 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-<<<<<<< Updated upstream
-            player.animation.FadeIn(("jump"), 0.25f, 1);
-        }   
-        else if (Input.GetButtonUp("Jump")  && Mathf.Abs(rb.velocity.y) > 0.001f)
-        {
-            player.animation.Play(("idle"));
-=======
             anim.SetBool("isJump", true);
         }   
         else if (Input.GetButtonUp("Jump")  && Mathf.Abs(rb.velocity.y) > 0.001f)
         {
             anim.SetBool("isJump", false);
->>>>>>> Stashed changes
         }
         
     }

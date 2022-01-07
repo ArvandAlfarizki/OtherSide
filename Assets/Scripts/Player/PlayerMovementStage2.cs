@@ -8,13 +8,6 @@ public class PlayerMovementStage2 : MonoBehaviour
     public GameObject Trap;
     public GameObject Bucket;
     public GameObject bucketed;
-<<<<<<< Updated upstream
-    public float MovementSpeed = 1;
-    public float JumpForce = 1;
-    private Rigidbody2D rigidBody;
-    AudioSource audioSrc;
-    bool isMoving = false;
-=======
     float dirX;
     [SerializeField]
     float moveSpeed = 5f;
@@ -24,7 +17,6 @@ public class PlayerMovementStage2 : MonoBehaviour
     bool isMoving = false;
     bool isJump = false;
     
->>>>>>> Stashed changes
     
 
     // Start is called before the first frame update
@@ -36,29 +28,16 @@ public class PlayerMovementStage2 : MonoBehaviour
         Bucket.gameObject.SetActive (false);
         bucketed.gameObject.SetActive (true);
 
-<<<<<<< Updated upstream
-        rigidBody = GetComponent<Rigidbody2D>();
-        audioSrc = GetComponent<AudioSource> ();
-        
-=======
         rb = GetComponent<Rigidbody2D>();
         audioSrc = GetComponent<AudioSource> ();
         
         
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
     private void Update()
     {
 
-<<<<<<< Updated upstream
-        float movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
-
-        if (!Mathf.Approximately(0, movement))
-        transform.rotation = movement < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
-=======
         dirX = Input.GetAxis ("Horizontal") * moveSpeed;
 
         var movement = Input.GetAxis("Horizontal");
@@ -78,25 +57,10 @@ public class PlayerMovementStage2 : MonoBehaviour
         else{
         isMoving = false;
         }
->>>>>>> Stashed changes
 
         if (isMoving) {
             if (!audioSrc.isPlaying)
             audioSrc.Play ();
-<<<<<<< Updated upstream
-        }
-        else   {
-            audioSrc.Stop ();
-
-        }
-        
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(rigidBody.velocity.y) < 0.001f)
-        {
-            rigidBody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-        }
-    }
-
-=======
             
         }
         else if (isMoving)
@@ -121,7 +85,6 @@ public class PlayerMovementStage2 : MonoBehaviour
         rb.velocity = new Vector2 (dirX, rb.velocity.y);
     }
 
->>>>>>> Stashed changes
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Trap.gameObject.SetActive(true);
