@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -10,25 +11,39 @@ public class PlayerAnimation : MonoBehaviour
 	private float dirX;
 	private bool facingRight = true;
 	private Vector3 localScale;
+	AudioSource audioSrc;
+	bool isMoving = false;
+    bool isJump = false;
     
+	private DialogueRunner dialogueRunner = null;
     private void Start()
     {
 		rb = GetComponent<Rigidbody2D>();
+		audioSrc = GetComponent<AudioSource> ();
 		anim = GetComponent<Animator>();
 		localScale = transform.localScale;
 		moveSpeed = 5f;
+		dialogueRunner = FindObjectOfType<DialogueRunner>();
 	}
 
     // Update is called once per frame
     private void Update()
     {
+		if(dialogueRunner.IsDialogueRunning == true)
+            return;
+
         dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
+
+		
 
 		if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
 			rb.AddForce(Vector2.up * 700f);
 
-		if (Mathf.Abs(dirX) > 0 && rb.velocity.y == 0)
+		if (Mathf.Abs(dirX) > 0 && rb.velocity.y == 0) {
+            if (!audioSrc.isPlaying)
+            audioSrc.Play ();
 			anim.SetBool("isRunning", true);
+		}
 		else
 			anim.SetBool("isRunning", false);
 
