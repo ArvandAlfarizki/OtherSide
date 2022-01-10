@@ -14,6 +14,9 @@ public class MovementStage3 : MonoBehaviour
 	private float dirX;
 	private bool facingRight = true;
 	private Vector3 localScale;
+	AudioSource audioSrc;
+	bool isMoving = false;
+    bool isJump = false;
     
     private void Start()
     {
@@ -26,6 +29,7 @@ public class MovementStage3 : MonoBehaviour
 
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		audioSrc = GetComponent<AudioSource> ();
 		localScale = transform.localScale;
 		moveSpeed = 5f;
 	}
@@ -38,8 +42,11 @@ public class MovementStage3 : MonoBehaviour
 		if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
 			rb.AddForce(Vector2.up * 700f);
 
-		if (Mathf.Abs(dirX) > 0 && rb.velocity.y == 0)
+		if (Mathf.Abs(dirX) > 0 && rb.velocity.y == 0) {
+			if (!audioSrc.isPlaying)
+            audioSrc.Play ();
 			anim.SetBool("isRunning", true);
+		}
 		else
 			anim.SetBool("isRunning", false);
 
