@@ -1,28 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Yarn.Unity;
 
-public class PlayerShootRight : MonoBehaviour
+public class PlayerShootRight1 : MonoBehaviour
 {
     public float shootSpeed, shootTimer;
     private bool isShooting;
 
     public Transform shootPos;
     public GameObject flashHit;
-    private DialogueRunner dialogueRunner = null;
     // Start is called before the first frame update
     void Start()
     {
         isShooting = false;
-        dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dialogueRunner.IsDialogueRunning == true)
-            return;
             
         if (Input.GetButtonDown("Fire1") && !isShooting)
         {
@@ -34,7 +29,6 @@ public class PlayerShootRight : MonoBehaviour
     {
         int direction()
         {
-            AudioPlayer.Instance.PlaySFX ("18. Water");
             if(transform.localScale.x < 0f)
             {
                 return -1;
