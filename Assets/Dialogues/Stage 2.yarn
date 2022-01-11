@@ -1,0 +1,55 @@
+title: Start
+tags: 
+colorID: 0
+position: 276,-301
+---
+Hantu : Selamat datang di labku
+[[Siapa kamu?|Jawaban1]]
+===
+title: Jawaban1
+tags: 
+colorID: 0
+position: -77,-87
+---
+Hantu : Aku adalah penjaga laboratorium other side.....
+[[Bagaimana cara aku keluar dari tempat ini?|Jawaban2]]
+===
+title: Jawaban2
+tags: 
+colorID: 0
+position: 290,136
+---
+Hantu : Aku akan memberitahumu cara untuk keluar dari laboratoriumku...
+[[Bagaimana caranya?|Jawabn3]]
+===
+title: Jawabn3
+tags: 
+colorID: 0
+position: -88,348
+---
+Hantu : Coba kamu perhatikan dinding di sekitar ruangan ini, itu merukapak apa yang akan terjadi di depan.
+[[Hah? aku tidak mengerti maksudmu|Jawaban4]]
+[[Baiklah kalau begitu.|Jawaban5]]
+===
+title: Jawaban4
+tags: 
+colorID: 0
+position: 232,578
+---
+Hantu :.......
+===
+title: JawabanTerakhir
+tags: 
+colorID: 0
+position: -98,728
+---
+Hantu :..........
+===
+title: Jawaban5
+tags: 
+colorID: 0
+position: -432,521
+---
+Hantu : Fokuslah HAHAHAHA!!!!!.....
+[[Hmmmmm baiklah|JawabanTerakhir]]
+===

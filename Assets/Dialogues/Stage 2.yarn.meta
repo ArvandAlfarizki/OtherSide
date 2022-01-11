@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: fb1b5848e770d2949b06849497713419
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - Stage 2-Start-0
+  - Stage 2-Start-1
+  - Stage 2-Jawaban1-2
+  - Stage 2-Jawaban1-3
+  - Stage 2-Jawaban2-4
+  - Stage 2-Jawaban2-5
+  - Stage 2-Jawabn3-6
+  - Stage 2-Jawabn3-7
+  - Stage 2-Jawabn3-8
+  - Stage 2-Jawaban4-9
+  - Stage 2-JawabanTerakhir-10
+  - Stage 2-Jawaban5-11
+  - Stage 2-Jawaban5-12
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

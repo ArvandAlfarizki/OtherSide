@@ -26,12 +26,16 @@ public class EnterHall : MonoBehaviour
             AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Lorong3";
             enterAllowed = true;
+        }else if (collision.GetComponent<Door6>())
+        {
+            sceneToLoad = "EndScene";
+            enterAllowed = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Door0>() || collision.GetComponent<Door2>() || collision.GetComponent<Door4>())
+        if (collision.GetComponent<Door0>() || collision.GetComponent<Door2>() || collision.GetComponent<Door4>() || collision.GetComponent<Door6>())
         {
             enterAllowed = false;
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class MovementStage2 : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MovementStage2 : MonoBehaviour
 	AudioSource audioSrc;
 	bool isMoving = false;
     bool isJump = false;
+	private DialogueRunner dialogueRunner = null;
     
     private void Start()
     {
@@ -32,11 +34,15 @@ public class MovementStage2 : MonoBehaviour
 		audioSrc = GetComponent<AudioSource> ();
 		localScale = transform.localScale;
 		moveSpeed = 5f;
+		dialogueRunner = FindObjectOfType<DialogueRunner>();
 	}
 
     // Update is called once per frame
     private void Update()
     {
+		if(dialogueRunner.IsDialogueRunning == true)
+            return;
+			
         dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
 		if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
