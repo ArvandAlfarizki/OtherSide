@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EnterDoor : MonoBehaviour
 {
     private bool enterAllowed;
     private string sceneToLoad;
+    public GameObject DoorText;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Door1>())
         {
+            DoorText.SetActive (true);
             AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Stage1";
             enterAllowed = true;
@@ -24,6 +27,7 @@ public class EnterDoor : MonoBehaviour
         }
         else if (collision.GetComponent<Door5>())
         {
+            DoorText.SetActive (true);
             AudioPlayer.Instance.PlaySFX ("16. Unlock");
             sceneToLoad = "Stage3";
             enterAllowed = true;
