@@ -681,9 +681,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500434136}
-  m_LocalRotation: {x: 0, y: 0, z: 0.101358384, w: 0.99485}
-  m_LocalPosition: {x: -0.53611284, y: 9.838656, z: -0.0050000004}
-  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.074450694, w: 0.9972247}
+  m_LocalPosition: {x: -0.39939716, y: 9.881229, z: -0.0050000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1560086692}
   m_RootOrder: 5
@@ -3164,7 +3164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78aef85a8ff680a4ea37c174fc5882ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 14
+  startHealth: 20
   dieEffect: {fileID: 160996, guid: d6cbeb13c773d154995ea9a66246a5c0, type: 3}
 --- !u!114 &1560086689
 MonoBehaviour:
